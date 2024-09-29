@@ -1,6 +1,5 @@
-from datetime import datetime
-from pydantic import BaseModel, Field
 from typing import List, Optional, Union
+from pydantic import BaseModel, Field
 
 from .Events import _Events
 from .Lineups import Lineup
@@ -29,7 +28,7 @@ class Fixture(BaseModel):
     id: int
     referee: Optional[Union[str, None]] = Field(default=None)
     timezone: Optional[str] = Field(default=None)
-    date: Optional[datetime] = Field(default=None)
+    date: Optional[str] = Field(default=None)
     timestamp: Optional[int] = Field(default=None)
     periods: Optional[FixturePeriods] = Field(default=None)
     venue: Optional[FixtureVenue] = Field(default=None)

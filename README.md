@@ -31,7 +31,7 @@ Go to <a href="https://dashboard.api-football.com/profile?access">profile</a> an
 ### Usage example
 ```python
 import asyncio
-from apisports_football.wrapper import Wrapper
+from apisports_football import Wrapper
 
 api = Wrapper('TOKEN_HERE')
 

@@ -29,7 +29,7 @@ pip install apisports-football
 ### Пример использования
 ```python
 import asyncio
-from apisports_football.wrapper import Wrapper
+from apisports_football import Wrapper
 
 api = Wrapper('TOKEN_HERE')
 

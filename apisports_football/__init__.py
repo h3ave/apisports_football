@@ -1,5 +1,7 @@
+from apisports_football.wrapper import Wrapper
+
 from .apiclient import ApiClient
-from .wrapper import Wrapper
 from .exceptions import ApiError
-from .utils import prepare_params
 from .Models import *
+from .utils import prepare_params
+from .wrapper import Wrapper

@@ -1,57 +1,80 @@
-from typing import Dict, List
+from typing import Dict, List, Optional, Union
 from pydantic import BaseModel, Field
 
 from ..BaseModel import BaseResponseModel
 
 from ..Fixtures.Fixtures import FixtureInfo
+from ..Leagues.Leagues import League
 
+class Percent(BaseModel):
+    home: str
+    draw: Optional[str] = Field(default=None)
+    away: str
 
-class Tavers(BaseModel):
+class Goals(BaseModel):
+    home: str
+    away: str
+
+class Last_Five_Goals(BaseModel):
     total: int
     average: str
 
 
-class Last_5_Goals(BaseModel):
-    for_: Tavers
-    against: Tavers
-
-
-class Last_5(BaseModel):
+class Last_Five(BaseModel):
     played: int
     form: str
     att: str
     def_: str = Field(alias='def')
-    goals: Last_5_Goals
+    goals: Dict[str, Last_Five_Goals]
 
+class _Lineup(BaseModel):
+    formation: str
+    played: int
+
+class _League(BaseModel):
+    form: str
+    fixtures: Dict
+    goals: Dict
+    biggest: Dict
+    clean_sheet: Dict
+    failed_to_score: Dict
+    penalty: Dict
+    lineups: list[_Lineup]
+    cards: Dict
 
 class Team(BaseModel):
     id: int
     name: str
-    logo: str
-    last_5: Last_5 = Field(default=None)
-    league: Dict = Field(default=None)
+    logo: Optional[str] = Field(default=None)
+    comment: Optional[Union[str, None]] = Field(default=None)
+    last_5: Optional[Last_Five] = Field(default=None)
+    league: Optional[_League] = Field(default=None)
 
-
-class Teams(BaseModel):
-    home: str
-    away: str
-
+class Prediction(BaseModel):
+    winner: Team
+    win_or_draw: bool
+    under_over: str
+    goals: Goals
+    advice: str
+    percent: Percent
 
 class Comparison(BaseModel):
-    form: Teams  # use Teams class
-    att: Teams
-    def_: Teams = Field(alias='def')
-    poisson_distribution: Teams
-    h2h: Teams
-    goals: Teams
-    total: Teams
+    form: Percent
+    att: Percent
+    def_: Percent = Field(alias='def')
+    poisson_distribution: Percent
+    h2h: Percent
+    goals: Percent
+    total: Percent
 
+class Teams(BaseModel):
+    home: Team
+    away: Team
 
 class Response(BaseModel):
-    teams: Dict[str, Dict[str, str]] = {
-        'home': Team,
-        'away': Team
-    }
+    predictions: Prediction
+    league: League
+    teams: Teams
     comparison: Comparison
     h2h: List[FixtureInfo]
 

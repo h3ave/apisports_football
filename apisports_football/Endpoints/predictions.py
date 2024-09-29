@@ -15,5 +15,4 @@ class _Predictions(ApiClient):
             'fixture': fixture
         }
         response = await self._make_request('predictions', params=params)
-        print(response)
         return Predictions.model_validate(response)
