@@ -53,7 +53,7 @@ class Team(BaseModel):
 class Prediction(BaseModel):
     winner: Team
     win_or_draw: bool
-    under_over: str
+    under_over: Union[str, None]
     goals: Goals
     advice: str
     percent: Percent

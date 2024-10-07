@@ -20,8 +20,8 @@ class FixturePeriods(BaseModel):
 
 class FixtureVenue(BaseModel):
     id: Union[int, None]
-    name: str
-    city: str
+    name: Union[str, None]
+    city: Union[str, None]
 
 
 class Fixture(BaseModel):
