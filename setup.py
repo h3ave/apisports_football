@@ -6,7 +6,7 @@ def readme():
 
 setup(
   name='apisports_football',
-  version='1.0.1',
+  version='1.0.2',
   author='h3ave',
   author_email='noth3ave@yandex.ru',
   description='Asynchronous wrapper for football API from API-SPORTS',
