@@ -1,5 +1,5 @@
-from pydantic import BaseModel
-from typing import List, Union
+from pydantic import BaseModel, Field
+from typing import List, Optional, Union
 
 from ..BaseModel import BaseResponseModel
 
@@ -41,6 +41,8 @@ class Statistics(BaseModel):
 class Response(BaseModel):
     team: Team
     statistics: List[Statistics]
+    statistics_1h: Optional[List[Statistics]] = Field(default=None)
+    statistics_2h: Optional[List[Statistics]] = Field(default=None)
 
 
 class Statistics(BaseResponseModel):

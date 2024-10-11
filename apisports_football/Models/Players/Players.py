@@ -23,6 +23,8 @@ class Player(BaseModel):
     nationality: Optional[str] = Field(default=None)
     height: Union[str, None]
     weight: Union[str, None]
+    number: Optional[Union[int, None]] = Field(default=None)
+    position: Optional[Union[str, None]] = Field(default=None)
     injured: Optional[bool] = Field(default=None)
     photo: str
 

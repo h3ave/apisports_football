@@ -17,7 +17,9 @@ class _Fixtures(ApiClient):
             self,
             league: int = None,
             season: int = None,
-            current: Literal['true', 'false'] = None
+            current: Literal['true', 'false'] = None,
+            dates: Literal['true', 'false'] = 'false',
+            timezone: str = None
     ) -> Rounds:
         """
         Get the rounds for a league or a cup
@@ -26,11 +28,15 @@ class _Fixtures(ApiClient):
         :param int league: The id of the league
         :param int season: The season of the league
         :param Literal['true', 'false'] current: The current round only
+        :param Literal['true, 'false'] dates: Add the dates of each round in the response
+        :param str timezone: A valid timezone from the endpoint `Timezone`
         """
         params = {
             'league': league,
             'season': season,
-            'current': current
+            'current': current,
+            'dates': dates,
+            'timezone': timezone
         }
         response = await self._make_request('fixtures/rounds', params=params)
         return Rounds.model_validate(response)
@@ -162,7 +168,8 @@ class _Fixtures(ApiClient):
                 'Passes %',
                 'expected_goals',
                 'goals_prevented'
-            ] = None
+            ] = None,
+            half: Literal['true', 'false'] = 'false'
     ) -> Statistics:
         """
         Get the statistics for one fixture
@@ -171,11 +178,13 @@ class _Fixtures(ApiClient):
         :param int fixture: The id of the fixture
         :param int team: The id of the team
         :param str type: The type of statistics
+        :param Literal['true', 'false'] half: Add the halftime statistics in the response
         """
         params = {
             'fixture': fixture,
             'team': team,
-            'type': type
+            'type': type,
+            'half': half
         }
         response = await self._make_request('fixtures/statistics', params=params)
         return Statistics.model_validate(response)

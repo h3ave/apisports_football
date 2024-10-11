@@ -1,11 +1,40 @@
 from ..apiclient import ApiClient
 
 from ..Models.Players.Players import Players
+from ..Models.Players.Profiles import Profiles
+from ..Models.Players.Teams import Teams
 from ..Models.Leagues.Seasons import Seasons
 from ..Models.Players.Squads import Squads
 
-
 class _Players(ApiClient):
+    async def teams(self, player: int) -> Teams:
+        """
+        Returns the list of teams and seasons in which the player played during his career
+        https://www.api-football.com/documentation-v3#tag/Players/operation/get-players-teams
+
+        :param int player: The id of the player
+        """
+        params = {'player': player}
+        response = await self._make_request('players/teams', params=params)
+        return Teams.model_validate(response)
+
+    async def profiles(
+            self,
+            player: int = None,
+            search: str = None,
+            page: int = 1
+    ) -> Profiles:
+        """
+        Returns the list of all available players
+        https://www.api-football.com/documentation-v3#tag/Players/operation/get-players-profiles
+
+        :param int player: The id of the player
+        :param str search: The lastname of the player
+        :param int page: Use for the pagination
+        """
+        params = {'player': player, 'search': search, 'page': page}
+        response = await self._make_request('players/profiles', params=params)
+        return Profiles.model_validate(response)
     async def seasons(self, player: int) -> Seasons:
         """
         Get all available seasons for players statistics

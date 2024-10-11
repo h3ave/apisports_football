@@ -12,6 +12,7 @@ class _Injuries(ApiClient):
             team: int = None,
             player: int = None,
             date: str = None,
+            ids: str = None,
             timezone: str = None
     ) -> Injuries:
         """
@@ -24,6 +25,7 @@ class _Injuries(ApiClient):
         :param int team: The id of the team
         :param int player: The id of the player
         :param str date: A valid date
+        :param str ids: One or more fixture ids
         :param str timezone: A valid timezone from the endpoint `Timezone`
         """
         params = {
@@ -33,6 +35,7 @@ class _Injuries(ApiClient):
             'team': team,
             'player': player,
             'date': date,
+            'ids': ids,
             'timezone': timezone
         }
         response = await self._make_request('injuries', params=params)

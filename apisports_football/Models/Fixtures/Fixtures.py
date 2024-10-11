@@ -10,6 +10,7 @@ class FixtureStatus(BaseModel):
     long: str
     short: Optional[str] = Field(default=None)
     elapsed: Union[int, None]
+    extra: Optional[Union[int, None]] = Field(default=None)
     seconds: Optional[str] = Field(default=None)
 
 

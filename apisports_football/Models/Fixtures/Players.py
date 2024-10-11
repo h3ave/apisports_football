@@ -43,7 +43,7 @@ class Goals(BaseModel):
 class Passes(BaseModel):
     total: Union[int, None]
     key: Union[int, None]
-    accuracy: Union[int, None]
+    accuracy: Union[int, str, None]
 
 
 class Tackles(BaseModel):
