@@ -3,5 +3,5 @@ from typing import List
 from ..BaseModel import BaseResponseModel
 
 
-class Timezones(BaseResponseModel):
+class Timezone(BaseResponseModel):
     response: List[str]

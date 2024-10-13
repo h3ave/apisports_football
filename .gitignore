@@ -1,5 +1,8 @@
 **/__pycache__/
 .pytest_cache
 .vscode
+
 apisports_football.egg-info/
 dist/
+
+.markdownlint.json

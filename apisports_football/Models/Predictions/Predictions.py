@@ -16,12 +16,12 @@ class Goals(BaseModel):
     away: str
 
 class Last_Five_Goals(BaseModel):
-    total: int
-    average: str
+    total: Union[float, int]
+    average: Union[float, int]
 
 
 class Last_Five(BaseModel):
-    played: int
+    played: Optional[int] = Field(default=None)
     form: str
     att: str
     def_: str = Field(alias='def')
@@ -38,9 +38,9 @@ class _League(BaseModel):
     biggest: Dict
     clean_sheet: Dict
     failed_to_score: Dict
-    penalty: Dict
-    lineups: list[_Lineup]
-    cards: Dict
+    penalty: Optional[Dict] = Field(default=None)
+    lineups: Optional[List[_Lineup]] = Field(default=None)
+    cards: Optional[Dict] = Field(default=None)
 
 class Team(BaseModel):
     id: int
