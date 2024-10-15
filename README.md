@@ -1,5 +1,8 @@
 # apisports_football
 
+[![PyPI version](https://img.shields.io/pypi/v/apisports-football)](https://pypi.org/project/apisports-football)
+[![python](https://img.shields.io/pypi/pyversions/apisports-football)](https://pypi.org/project/apisports-football)
+
 [Russian version](https://github.com/h3ave/apisports_football/blob/main/README.ru.md)
 
 It's a handy API wrapper that makes it easy to work with <https://www.api-football.com/>.

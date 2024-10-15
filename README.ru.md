@@ -1,5 +1,8 @@
 # apisports_football
 
+[![PyPI version](https://img.shields.io/pypi/v/apisports-football)](https://pypi.org/project/apisports-football)
+[![python](https://img.shields.io/pypi/pyversions/apisports-football)](https://pypi.org/project/apisports-football)
+
 Это удобная API-обертка, упрощающая работу с <https://www.api-football.com/>.
 
 Официальная документация: <https://www.api-football.com/documentation-v3>
