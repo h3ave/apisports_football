@@ -22,7 +22,7 @@ class _Players(ApiClient):
             self,
             player: int = None,
             search: str = None,
-            page: int = 1
+            page: int = None
     ) -> Profiles:
         """
         Returns the list of all available players
@@ -35,7 +35,7 @@ class _Players(ApiClient):
         params = {'player': player, 'search': search, 'page': page}
         response = await self._make_request('players/profiles', params=params)
         return Profiles.model_validate(response)
-    async def seasons(self, player: int) -> Seasons:
+    async def seasons(self, player: int = None) -> Seasons:
         """
         Get all available seasons for players statistics
         https://www.api-football.com/documentation-v3#tag/Players/operation/get-players-seasons
@@ -46,14 +46,14 @@ class _Players(ApiClient):
         response = await self._make_request('players/seasons', params=params)
         return Seasons.model_validate(response)
 
-    async def players(
+    async def get(
             self,
             id: int = None,
             team: int = None,
             league: int = None,
             season: int = None,
             search: str = None,
-            page: int = 1
+            page: int = None
     ) -> Players:
         """
         Get players statistics
