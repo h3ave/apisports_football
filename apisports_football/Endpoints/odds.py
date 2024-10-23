@@ -14,7 +14,7 @@ class _Odds(ApiClient):
             season: int = None,
             date: str = None,
             timezone: str = None,
-            page: int = 1,
+            page: int = None,
             bookmaker: int = None,
             bet: int = None
     ) -> Odds:
@@ -46,7 +46,7 @@ class _Odds(ApiClient):
 
     async def mapping(
             self,
-            page: int = 1
+            page: int = None
     ) -> Mapping:
         """
         Get the list of available fixtures id for the endpoint odds
