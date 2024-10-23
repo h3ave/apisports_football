@@ -45,7 +45,7 @@ from apisports_football import Wrapper
 api = Wrapper('TOKEN_HERE')
 
 async def main() -> None:
-    data = await api.leagues().leagues(
+    data = await api.leagues().get(
         country = 'Spain',
         season = 2024
     )
