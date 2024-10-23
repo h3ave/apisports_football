@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "apisports_football"
+version = "1.0.4"
+dependencies = ["aiohttp>=3.8.6", "pydantic>=2.5.3", "typing-extensions>=4.7.1"]
+requires-python = ">= 3.7"
+authors = [{ name = "h3ave", email = "noth3ave@yandex.ru" }]
+description = "Asynchronous wrapper for football API from API-SPORTS"
+readme = "README.md"
+license = { file = "LICENSE" }
+keywords = ["football", "api", "wrapper", "apisports"]
+classifiers = [
+    'Programming Language :: Python :: 3.7',
+    'Programming Language :: Python :: 3.8',
+    'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11',
+    'Programming Language :: Python :: 3.12',
+    'Programming Language :: Python :: 3.13',
+    'License :: OSI Approved :: MIT License',
+    'Operating System :: OS Independent',
+]
+
+[project.urls]
+Changelog = "https://github.com/h3ave/apisports_football/blob/main/CHANGELOG.md"
+Repository = "https://github.com/h3ave/apisports_football"
