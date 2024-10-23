@@ -9,7 +9,7 @@ except ImportError:
     from typing_extensions import Literal
 
 class _Leagues(ApiClient):
-    async def leagues(
+    async def get(
             self,
             id: int = None,
             name: str = None,
@@ -18,7 +18,7 @@ class _Leagues(ApiClient):
             season: int = None,
             team: int = None,
             type: Literal['league', 'cup'] = None,
-            current: Literal['false', 'true'] = None,
+            current: bool = None,
             search: str = None,
             last: int = None
     ) -> Leagues:
@@ -33,7 +33,7 @@ class _Leagues(ApiClient):
         :param int season: The season of the league
         :param int team: The id of the team
         :param str type: The type of the league
-        :param str current: The current league only
+        :param bool current: The current league only
         :param str search: The name or the country of the league
         :param int last: The X last leagues/cups added in the API
         """
