@@ -17,8 +17,8 @@ class _Fixtures(ApiClient):
             self,
             league: int = None,
             season: int = None,
-            current: Literal['true', 'false'] = None,
-            dates: Literal['true', 'false'] = 'false',
+            current: bool = None,
+            dates: bool = None,
             timezone: str = None
     ) -> Rounds:
         """
@@ -27,8 +27,8 @@ class _Fixtures(ApiClient):
 
         :param int league: The id of the league
         :param int season: The season of the league
-        :param Literal['true', 'false'] current: The current round only
-        :param Literal['true, 'false'] dates: Add the dates of each round in the response
+        :param bool current: The current round only
+        :param bool dates: Add the dates of each round in the response
         :param str timezone: A valid timezone from the endpoint `Timezone`
         """
         params = {
@@ -169,7 +169,7 @@ class _Fixtures(ApiClient):
                 'expected_goals',
                 'goals_prevented'
             ] = None,
-            half: Literal['true', 'false'] = 'false'
+            half: bool = None
     ) -> Statistics:
         """
         Get the statistics for one fixture
@@ -178,7 +178,7 @@ class _Fixtures(ApiClient):
         :param int fixture: The id of the fixture
         :param int team: The id of the team
         :param str type: The type of statistics
-        :param Literal['true', 'false'] half: Add the halftime statistics in the response
+        :param bool half: Add the halftime statistics in the response
         """
         params = {
             'fixture': fixture,
@@ -239,7 +239,7 @@ class _Fixtures(ApiClient):
         response = await self._make_request('fixtures/lineups', params=params)
         return Lineups.model_validate(response)
 
-    async def players_statistics(
+    async def players(
             self,
             fixture: int,
             team: int = None
