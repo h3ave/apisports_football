@@ -6,3 +6,6 @@ apisports_football.egg-info/
 dist/
 
 .markdownlint.json
+
+venv/
+.env
