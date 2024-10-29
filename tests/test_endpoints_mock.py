@@ -14,15 +14,15 @@ METHODS = [file_name.replace('.json', '')
            for file_name in os.listdir(API_RESPONSES_PATH)]
 
 
-@pytest.fixture
-def api_wrapper():
+@pytest.fixture(name='api_wrapper')
+def fixture_api_wrapper():
     return Wrapper(api_key='demo')
 
 
 @pytest.mark.asyncio
 @pytest.mark.parametrize('method', METHODS)
 async def test_endpoint(api_wrapper, method: str):
-    with open(f'{API_RESPONSES_PATH}/{method}.json', mode='r') as file:
+    with open(f'{API_RESPONSES_PATH}/{method}.json', mode='r', encoding='utf-8') as file:
         expected_response = json.loads(file.read())
         params = expected_response['parameters']
         method_names = method.split('_')
@@ -38,4 +38,8 @@ async def test_endpoint(api_wrapper, method: str):
 
         with aioresponses() as mock:
             mock.get(url=url, payload=expected_response, status=200)
-            await method(**params)
+            response = await method(**params)
+            response_params = json.loads(response.parameters.model_dump_json())
+            if isinstance(response_params, list):
+                response_params = {}
+            assert response_params == params
