@@ -36,191 +36,191 @@ API_RESPONSES_PATH = f'{os.getcwd()}/tests/data/api_responses'
 
 class TestPydanticModels:
     def test_coachs(self):
-        with open(f'{API_RESPONSES_PATH}/coachs.json') as file:
+        with open(f'{API_RESPONSES_PATH}/coachs.json', encoding='utf-8') as file:
             json_data = json.load(file)
             Coachs.model_validate(json_data)
 
     def test_countries(self):
-        with open(f'{API_RESPONSES_PATH}/countries.json') as file:
+        with open(f'{API_RESPONSES_PATH}/countries.json', encoding='utf-8') as file:
             json_data = json.load(file)
             Countries.model_validate(json_data)
 
     def test_fixtures_rounds(self):
-        with open(f'{API_RESPONSES_PATH}/fixtures_rounds.json') as file:
+        with open(f'{API_RESPONSES_PATH}/fixtures_rounds.json', encoding='utf-8') as file:
             json_data = json.load(file)
             Rounds.model_validate(json_data)
 
     def test_fixtures(self):
-        with open(f'{API_RESPONSES_PATH}/fixtures.json') as file:
+        with open(f'{API_RESPONSES_PATH}/fixtures.json', encoding='utf-8') as file:
             json_data = json.load(file)
             Fixtures.model_validate(json_data)
 
     def test_fixtures_headtohead(self):
-        with open(f'{API_RESPONSES_PATH}/fixtures_headtohead.json') as file:
+        with open(f'{API_RESPONSES_PATH}/fixtures_headtohead.json', encoding='utf-8') as file:
             json_data = json.load(file)
             Fixtures.model_validate(json_data)
 
     def test_fixtures_statistics(self):
-        with open(f'{API_RESPONSES_PATH}/fixtures_statistics.json') as file:
+        with open(f'{API_RESPONSES_PATH}/fixtures_statistics.json', encoding='utf-8') as file:
             json_data = json.load(file)
             FixturesStatistics.model_validate(json_data)
 
     def test_fixtures_events(self):
-        with open(f'{API_RESPONSES_PATH}/fixtures_events.json') as file:
+        with open(f'{API_RESPONSES_PATH}/fixtures_events.json', encoding='utf-8') as file:
             json_data = json.load(file)
             Events.model_validate(json_data)
 
     def test_fixtures_lineups(self):
-        with open(f'{API_RESPONSES_PATH}/fixtures_lineups.json') as file:
+        with open(f'{API_RESPONSES_PATH}/fixtures_lineups.json', encoding='utf-8') as file:
             json_data = json.load(file)
             Lineups.model_validate(json_data)
 
     def test_fixtures_players(self):
-        with open(f'{API_RESPONSES_PATH}/fixtures_players.json') as file:
+        with open(f'{API_RESPONSES_PATH}/fixtures_players.json', encoding='utf-8') as file:
             json_data = json.load(file)
             FixturesPlayers.model_validate(json_data)
 
     def test_injuries(self):
-        with open(f'{API_RESPONSES_PATH}/injuries.json') as file:
+        with open(f'{API_RESPONSES_PATH}/injuries.json', encoding='utf-8') as file:
             json_data = json.load(file)
             Injuries.model_validate(json_data)
 
     def test_leagues(self):
-        with open(f'{API_RESPONSES_PATH}/leagues.json') as file:
+        with open(f'{API_RESPONSES_PATH}/leagues.json', encoding='utf-8') as file:
             json_data = json.load(file)
             Leagues.model_validate(json_data)
 
     def test_leagues_seasons(self):
-        with open(f'{API_RESPONSES_PATH}/leagues_seasons.json') as file:
+        with open(f'{API_RESPONSES_PATH}/leagues_seasons.json', encoding='utf-8') as file:
             json_data = json.load(file)
             Seasons.model_validate(json_data)
 
     def test_odds(self):
-        with open(f'{API_RESPONSES_PATH}/odds.json') as file:
+        with open(f'{API_RESPONSES_PATH}/odds.json', encoding='utf-8') as file:
             json_data = json.load(file)
             Odds.model_validate(json_data)
 
     def test_odds_bets(self):
-        with open(f'{API_RESPONSES_PATH}/odds_bets.json') as file:
+        with open(f'{API_RESPONSES_PATH}/odds_bets.json', encoding='utf-8') as file:
             json_data = json.load(file)
             Bookmakers.model_validate(json_data)
 
     def test_odds_bookmakers(self):
-        with open(f'{API_RESPONSES_PATH}/odds_bookmakers.json') as file:
+        with open(f'{API_RESPONSES_PATH}/odds_bookmakers.json', encoding='utf-8') as file:
             json_data = json.load(file)
             Bookmakers.model_validate(json_data)
 
     def test_odds_live(self):
-        with open(f'{API_RESPONSES_PATH}/odds_live.json') as file:
+        with open(f'{API_RESPONSES_PATH}/odds_live.json', encoding='utf-8') as file:
             json_data = json.load(file)
             Live.model_validate(json_data)
 
     def test_odds_live_bets(self):
-        with open(f'{API_RESPONSES_PATH}/odds_live_bets.json') as file:
+        with open(f'{API_RESPONSES_PATH}/odds_live_bets.json', encoding='utf-8') as file:
             json_data = json.load(file)
             LiveBets.model_validate(json_data)
 
     def test_odds_mapping(self):
-        with open(f'{API_RESPONSES_PATH}/odds_mapping.json') as file:
+        with open(f'{API_RESPONSES_PATH}/odds_mapping.json', encoding='utf-8') as file:
             json_data = json.load(file)
             Mapping.model_validate(json_data)
 
     def test_players(self):
-        with open(f'{API_RESPONSES_PATH}/players.json') as file:
+        with open(f'{API_RESPONSES_PATH}/players.json', encoding='utf-8') as file:
             json_data = json.load(file)
             Players.model_validate(json_data)
 
     def test_players_profiles(self):
-        with open(f'{API_RESPONSES_PATH}/players_profiles.json') as file:
+        with open(f'{API_RESPONSES_PATH}/players_profiles.json', encoding='utf-8') as file:
             json_data = json.load(file)
             Profiles.model_validate(json_data)
-    
+
     def test_players_seasons(self):
-        with open(f'{API_RESPONSES_PATH}/players_seasons.json') as file:
+        with open(f'{API_RESPONSES_PATH}/players_seasons.json', encoding='utf-8') as file:
             json_data = json.load(file)
             Seasons.model_validate(json_data)
-    
+
     def test_players_squads(self):
-        with open(f'{API_RESPONSES_PATH}/players_squads.json') as file:
+        with open(f'{API_RESPONSES_PATH}/players_squads.json', encoding='utf-8') as file:
             json_data = json.load(file)
             Squads.model_validate(json_data)
 
     def test_players_teams(self):
-        with open(f'{API_RESPONSES_PATH}/players_teams.json') as file:
+        with open(f'{API_RESPONSES_PATH}/players_teams.json', encoding='utf-8') as file:
             json_data = json.load(file)
             PlayersTeams.model_validate(json_data)
-    
+
     def test_players_topassists(self):
-        with open(f'{API_RESPONSES_PATH}/players_topassists.json') as file:
+        with open(f'{API_RESPONSES_PATH}/players_topassists.json', encoding='utf-8') as file:
             json_data = json.load(file)
             Players.model_validate(json_data)
-    
+
     def test_players_topredcards(self):
-        with open(f'{API_RESPONSES_PATH}/players_topredcards.json') as file:
+        with open(f'{API_RESPONSES_PATH}/players_topredcards.json', encoding='utf-8') as file:
             json_data = json.load(file)
             Players.model_validate(json_data)
-    
+
     def test_players_topscorers(self):
-        with open(f'{API_RESPONSES_PATH}/players_topscorers.json') as file:
+        with open(f'{API_RESPONSES_PATH}/players_topscorers.json', encoding='utf-8') as file:
             json_data = json.load(file)
             Players.model_validate(json_data)
-    
+
     def test_players_topyellowcards(self):
-        with open(f'{API_RESPONSES_PATH}/players_topyellowcards.json') as file:
+        with open(f'{API_RESPONSES_PATH}/players_topyellowcards.json', encoding='utf-8') as file:
             json_data = json.load(file)
             Players.model_validate(json_data)
-    
+
     def test_predictions(self):
-        with open(f'{API_RESPONSES_PATH}/predictions.json') as file:
+        with open(f'{API_RESPONSES_PATH}/predictions.json', encoding='utf-8') as file:
             json_data = json.load(file)
             Predictions.model_validate(json_data)
 
     def test_sidelined(self):
-        with open(f'{API_RESPONSES_PATH}/sidelined.json') as file:
+        with open(f'{API_RESPONSES_PATH}/sidelined.json', encoding='utf-8') as file:
             json_data = json.load(file)
             Sidelined.model_validate(json_data)
 
     def test_standings(self):
-        with open(f'{API_RESPONSES_PATH}/standings.json') as file:
+        with open(f'{API_RESPONSES_PATH}/standings.json', encoding='utf-8') as file:
             json_data = json.load(file)
             Standings.model_validate(json_data)
 
     def test_teams(self):
-        with open(f'{API_RESPONSES_PATH}/teams.json') as file:
+        with open(f'{API_RESPONSES_PATH}/teams.json', encoding='utf-8') as file:
             json_data = json.load(file)
             Teams.model_validate(json_data)
-    
+
     def test_teams_countries(self):
-        with open(f'{API_RESPONSES_PATH}/teams_countries.json') as file:
+        with open(f'{API_RESPONSES_PATH}/teams_countries.json', encoding='utf-8') as file:
             json_data = json.load(file)
             Countries.model_validate(json_data)
-    
+
     def test_teams_seasons(self):
-        with open(f'{API_RESPONSES_PATH}/teams_seasons.json') as file:
+        with open(f'{API_RESPONSES_PATH}/teams_seasons.json', encoding='utf-8') as file:
             json_data = json.load(file)
             Seasons.model_validate(json_data)
 
     def test_teams_statistics(self):
-        with open(f'{API_RESPONSES_PATH}/teams_statistics.json') as file:
+        with open(f'{API_RESPONSES_PATH}/teams_statistics.json', encoding='utf-8') as file:
             json_data = json.load(file)
             TeamsStatistics.model_validate(json_data)
 
     def test_timezone(self):
-        with open(f'{API_RESPONSES_PATH}/timezone.json') as file:
+        with open(f'{API_RESPONSES_PATH}/timezone.json', encoding='utf-8') as file:
             json_data = json.load(file)
             Timezone.model_validate(json_data)
 
     def test_transfers(self):
-        with open(f'{API_RESPONSES_PATH}/transfers.json') as file:
+        with open(f'{API_RESPONSES_PATH}/transfers.json', encoding='utf-8') as file:
             json_data = json.load(file)
             Transfers.model_validate(json_data)
-    
+
     def test_trophies(self):
-        with open(f'{API_RESPONSES_PATH}/trophies.json') as file:
+        with open(f'{API_RESPONSES_PATH}/trophies.json', encoding='utf-8') as file:
             json_data = json.load(file)
             Trophies.model_validate(json_data)
 
     def test_venues(self):
-        with open(f'{API_RESPONSES_PATH}/venues.json') as file:
+        with open(f'{API_RESPONSES_PATH}/venues.json', encoding='utf-8') as file:
             json_data = json.load(file)
             Venues.model_validate(json_data)
