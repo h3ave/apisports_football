@@ -1,9 +1,10 @@
 from ..apiclient import ApiClient
 
 from ..Models.Odds.Bookmakers import Bookmakers
-from ..Models.Odds.Odds import Odds
+from ..Models.Odds.Live import Live
 from ..Models.Odds.LiveBets import LiveBets
 from ..Models.Odds.Mapping import Mapping
+from ..Models.Odds.Odds import Odds
 
 
 class _Odds(ApiClient):
@@ -92,7 +93,7 @@ class _Odds(ApiClient):
             fixture: int = None,
             league: int = None,
             bet: int = None
-    ):
+    ) -> Live:
         """
         This endpoint returns in-play odds for fixtures in progress
         https://www.api-football.com/documentation-v3#tag/Odds-(In-Play)/operation/get-odds-live
@@ -107,7 +108,7 @@ class _Odds(ApiClient):
             'bet': bet
         }
         response = await self._make_request('odds/live', params=params)
-        return response
+        return Live.model_validate(response)
 
     async def live_bets(
             self,
