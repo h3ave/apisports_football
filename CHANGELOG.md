@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.4.1] - 2024-10-29
+
+### Added
+
+- Params check for mock tests
+
+### Fixed
+
+- `live` method validation
+
 ## [1.0.4] - 2024-10-23
 
 ### Added
@@ -75,6 +85,7 @@ Updated to API [3.9.3](https://www.api-football.com/documentation-v3#section/Cha
 - New model `Players/Profiles`.
 - New model `Players/Teams`.
 
+[1.0.4]: https://github.com/h3ave/apisports_football/tree/8efbc227488845b7b7cb48e9c4ea036bbe52b13a
 [1.0.3.4]: https://github.com/h3ave/apisports_football/tree/db22e0ddda891a19cf9ee622e41cf700b2dbd2f3
 [1.0.3.3]: https://github.com/h3ave/apisports_football/tree/12a7599b60eff91c14034fe1aa862cf196ea1965
 [1.0.3.2]: https://github.com/h3ave/apisports_football/tree/bd64c34ed2588046d55222ec5817a7e139118b67
