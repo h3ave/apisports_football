@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "apisports_football"
-version = "1.0.4"
+version = "1.0.4.1"
 dependencies = ["aiohttp>=3.8.6", "pydantic>=2.5.3", "typing-extensions>=4.7.1"]
 requires-python = ">= 3.7"
 authors = [{ name = "h3ave", email = "noth3ave@yandex.ru" }]
